@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <a href="{% url 'blog-blog' %}">Return to blogs</a>
+</header>
+
+{%block content%}
+        <h1>{{blog.name}}</h1>
+    <br>
+    <br>
+    <h5>{{blog.description}} <br> {{blog.date}}</h5>
+    <br>
+    <br>
+{%endblock%}
+</body>
+<style>
+    {%block css%}
+    h1{
+        position:absolute;
+        left:45%;
+    }
+    h5{
+        position:absolute;
+        left:10%;
+        top:25%;
+    }
+    {%endblock%}
+</style>
+</html>

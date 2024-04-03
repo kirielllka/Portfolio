@@ -1,0 +1,42 @@
+{%extends 'base.html'%}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>My portfolio</title>
+
+</head>
+<body>
+{%load static%}
+
+{%block content%}
+ <h2 style="position:absolute;left:500px;top:60px;font-size:25px;">Yan Korotkevich</h2>
+<div style="width:300px;position:absolute;left:500px;top:100px">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eos et molestiae perferendis quisquam tempora ullam voluptatibus. A dolorum fugiat ipsum minus molestias nesciunt rem repudiandae sequi velit voluptatem. Veritatis!
+
+
+</div>
+<img alt="" height="190px" src="{% static 'portfolio/Elon_Musk_Colorado_2022.jpg' %}" width="250px" style="position:absolute;left:200px">
+<br>
+{% for project in projects %}
+<div class="cont1", style="position:relative;display:inline-flex;margin:20px;margin-top:50px;top:200px;border:solid black 3px;border-radius:25px;">
+    <a href="{% url 'project_detale' project.id %}" class="name" style=";text-decoration:none;color:black"><h2>{{project.name}}</h2></a>
+
+</div>
+{% endfor %}
+{%endblock%}
+</body>
+    {%block css%}
+    <style>
+        .name{
+        text-decoration:none
+        }
+
+
+    </style>
+    {%endblock%}
+</html>

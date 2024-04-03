@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<h1>Elon Mask </h1>-->
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+<div class="container">
+    {% for project in projects %}
+    <a href="{% url 'blog_detale' project.id %}", class="urls">
+        <div class="blogs">
+            <h2 class="bnp"> <span class="name">{{project.name}}</span> <br> <span class="date">{{project.date}}</span></h2>
+
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{%endblock%}
+</body>
+<style>
+    {% block css%}
+    .blogs{
+        position:relative;
+        border:solid black 1px;
+        width:150px;
+        height:150px;
+        border-radius:10px;
+        margin:10px;
+
+    }
+    .bnp{
+        color:black;
+
+        position:absolute;
+        left:10px
+    }
+    .date{
+        font-size:15px;
+    }
+    .name{
+        font-size:20px;
+    }
+
+    .urls{
+        text-decoration:none;
+    }
+    .container{
+        display:flex;
+        padding: 10px;
+        flex-wrap:wrap;
+        align-content:space-between;
+    }
+
+    {%endblock%}
+</style>
+</html>
